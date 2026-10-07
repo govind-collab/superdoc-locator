@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>superdoc-locator</title>
+    <style>
+      body { margin: 0; display: grid; grid-template-columns: 1fr 320px; height: 100vh; font: 14px/1.4 system-ui, sans-serif; }
+      #editor { min-width: 0; overflow: auto; }
+      aside { padding: 16px; border-left: 1px solid #ddd; overflow: auto; }
+      aside p { margin: 0 0 12px; color: #555; }
+      button { margin: 0 4px 8px 0; }
+      #anchors { padding-left: 18px; }
+      #anchors li { margin-bottom: 8px; }
+      #anchors small { display: block; color: #777; }
+      .locator-found { background: #fff3a3; }
+      .locator-ambiguous { background: #ffb3b3; }
+    </style>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <aside>
+      <p>Select text in the document and anchor it. Then edit above it, or paste a copy of it somewhere else, and watch the anchor follow or refuse.</p>
+      <button id="anchor">Anchor selection</button>
+      <p><input id="text" placeholder="Replacement text" /> <button id="replace">Replace anchored text</button></p>
+      <ol id="anchors"></ol>
+    </aside>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
